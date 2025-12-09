@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Bibeebiz</title>
+    <meta name="description" content="Explore our portfolio of successful IT projects and technology solutions delivered for clients across various industries.">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-blue-600 flex items-center">
+                <img src="assets/images/logo.svg" alt="Bibeebiz Logo" class="w-10 h-10 mr-2">
+                Bibeebiz
+            </div>
+            <nav class="hidden md:flex space-x-6">
+                <a href="index.html" class="text-gray-700 hover:text-blue-600">Home</a>
+                <a href="about.html" class="text-gray-700 hover:text-blue-600">About</a>
+                <a href="services.html" class="text-gray-700 hover:text-blue-600">Services</a>
+                <a href="portfolio.html" class="text-gray-700 hover:text-blue-600">Portfolio</a>
+                <a href="contact.html" class="text-gray-700 hover:text-blue-600">Contact</a>
+            </nav>
+            <button class="md:hidden" onclick="toggleMenu()">☰</button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <a href="index.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Home</a>
+            <a href="about.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">About</a>
+            <a href="services.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Services</a>
+            <a href="portfolio.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Portfolio</a>
+            <a href="contact.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Contact</a>
+        </div>
+    </header>
+
+    <!-- Portfolio Hero -->
+    <section class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Our Portfolio</h1>
+            <p class="text-xl md:text-2xl">Showcasing successful projects and innovative solutions</p>
+        </div>
+    </section>
+
+    <!-- Portfolio Grid -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Project 1 -->
+                <div class="portfolio-card">
+                    <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="E-commerce Platform" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold mb-2">E-commerce Platform</h3>
+                    <p class="text-gray-600 mb-4">Full-stack e-commerce solution with payment integration, inventory management, and admin dashboard.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">React</span>
+                        <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">Node.js</span>
+                        <span class="text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded">MongoDB</span>
+                        <span class="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded">Stripe</span>
+                    </div>
+                    <p class="text-sm text-gray-500">Delivered: 3 months | Industry: Retail</p>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="portfolio-card">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Analytics Dashboard" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Analytics Dashboard</h3>
+                    <p class="text-gray-600 mb-4">Real-time business intelligence platform with interactive charts, KPI tracking, and automated reporting.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">Python</span>
+                        <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">Django</span>
+                        <span class="text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded">PostgreSQL</span>
+                        <span class="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded">Chart.js</span>
+                    </div>
+                    <p class="text-sm text-gray-500">Delivered: 4 months | Industry: Finance</p>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="portfolio-card">
+                    <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Mobile Health App" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Mobile Health App</h3>
+                    <p class="text-gray-600 mb-4">Cross-platform mobile application for telemedicine with appointment booking and video consultation features.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">React Native</span>
+                        <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">Firebase</span>
+                        <span class="text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded">WebRTC</span>
+                        <span class="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded">Stripe</span>
+                    </div>
+                    <p class="text-sm text-gray-500">Delivered: 5 months | Industry: Healthcare</p>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="portfolio-card">
+                    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="AI Chatbot Platform" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold mb-2">AI Chatbot Platform</h3>
+                    <p class="text-gray-600 mb-4">Intelligent chatbot solution with natural language processing for customer support automation.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">Python</span>
+                        <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">TensorFlow</span>
+                        <span class="text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded">FastAPI</span>
+                        <span class="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded">Docker</span>
+                    </div>
+                    <p class="text-sm text-gray-500">Delivered: 3 months | Industry: Customer Service</p>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="portfolio-card">
+                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Cloud Migration" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Cloud Migration</h3>
+                    <p class="text-gray-600 mb-4">Complete cloud migration project moving legacy systems to AWS with zero downtime and improved performance.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">AWS</span>
+                        <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">Terraform</span>
+                        <span class="text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded">Docker</span>
+                        <span class="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded">Kubernetes</span>
+                    </div>
+                    <p class="text-sm text-gray-500">Delivered: 6 months | Industry: Manufacturing</p>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="portfolio-card">
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Security Audit System" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Security Audit System</h3>
+                    <p class="text-gray-600 mb-4">Comprehensive security assessment and monitoring platform for enterprise-level cybersecurity management.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">Go</span>
+                        <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">PostgreSQL</span>
+                        <span class="text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded">Elasticsearch</span>
+                        <span class="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded">Kubernetes</span>
+                    </div>
+                    <p class="text-sm text-gray-500">Delivered: 4 months | Industry: Security</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-blue-600 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4">Have a Project in Mind?</h2>
+            <p class="text-xl mb-8">Let's discuss how we can bring your vision to life with our expertise.</p>
+            <a href="contact.html" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">Start a Project</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <div class="mb-4">
+                <div class="text-2xl font-bold text-blue-400 mb-2 flex items-center justify-center">
+                    <img src="assets/images/logo.svg" alt="Bibeebiz Logo" class="w-8 h-8 mr-2">
+                    Bibeebiz
+                </div>
+                <p class="text-gray-400">Transforming businesses through innovative technology solutions.</p>
+            </div>
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="about.html" class="text-gray-400 hover:text-white">About</a>
+                <a href="services.html" class="text-gray-400 hover:text-white">Services</a>
+                <a href="portfolio.html" class="text-gray-400 hover:text-white">Portfolio</a>
+                <a href="contact.html" class="text-gray-400 hover:text-white">Contact</a>
+            </div>
+            <p class="text-gray-400 text-sm">&copy; 2024 Bibeebiz. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

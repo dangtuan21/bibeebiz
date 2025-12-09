@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibeebiz - IT Technology & Software Solutions</title>
+    <meta name="description" content="Empowering businesses with cutting-edge IT solutions, software development, and technology consulting.">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-blue-600 flex items-center">
+                <img src="assets/images/logo.svg" alt="Bibeebiz Logo" class="w-10 h-10 mr-2">
+                Bibeebiz
+            </div>
+            <nav class="hidden md:flex space-x-6">
+                <a href="index.html" class="text-gray-700 hover:text-blue-600">Home</a>
+                <a href="about.html" class="text-gray-700 hover:text-blue-600">About</a>
+                <a href="services.html" class="text-gray-700 hover:text-blue-600">Services</a>
+                <a href="portfolio.html" class="text-gray-700 hover:text-blue-600">Portfolio</a>
+                <a href="contact.html" class="text-gray-700 hover:text-blue-600">Contact</a>
+            </nav>
+            <button class="md:hidden" onclick="toggleMenu()">☰</button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <a href="index.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Home</a>
+            <a href="about.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">About</a>
+            <a href="services.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Services</a>
+            <a href="portfolio.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Portfolio</a>
+            <a href="contact.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Contact</a>
+        </div>
+    </header>
+
+    <section class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20" style="background-image: linear-gradient(rgba(37, 99, 235, 0.9), rgba(37, 99, 235, 0.9)), url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'); background-size: cover; background-position: center;">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Empowering Businesses with Technology</h1>
+            <p class="text-xl md:text-2xl mb-8">Cutting-edge IT solutions and software development for the digital age</p>
+            <a href="contact.html" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">Get Started</a>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Our Services</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-6 rounded-lg text-center hover:shadow-lg transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Software Development" class="w-16 h-16 mx-auto mb-4 rounded-lg object-cover">
+                    <h3 class="text-xl font-semibold mb-2">Software Development</h3>
+                    <p class="text-gray-600">Custom software solutions tailored to your business needs.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg text-center hover:shadow-lg transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Cloud Solutions" class="w-16 h-16 mx-auto mb-4 rounded-lg object-cover">
+                    <h3 class="text-xl font-semibold mb-2">Cloud Solutions</h3>
+                    <p class="text-gray-600">Scalable cloud infrastructure and migration services.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg text-center hover:shadow-lg transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="AI & Analytics" class="w-16 h-16 mx-auto mb-4 rounded-lg object-cover">
+                    <h3 class="text-xl font-semibold mb-2">AI & Analytics</h3>
+                    <p class="text-gray-600">Intelligent solutions powered by AI and data analytics.</p>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <a href="services.html" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-300">View All Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Preview -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Recent Projects</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="E-commerce Platform" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold mb-2">E-commerce Platform</h3>
+                    <p class="text-gray-600 mb-4">Full-stack e-commerce solution with payment integration.</p>
+                    <span class="text-sm bg-blue-100 text-blue-800 px-2 py-1 rounded">React, Node.js, MongoDB</span>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Data Analytics Dashboard" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Data Analytics Dashboard</h3>
+                    <p class="text-gray-600 mb-4">Real-time analytics platform for business intelligence.</p>
+                    <span class="text-sm bg-green-100 text-green-800 px-2 py-1 rounded">Python, Django, PostgreSQL</span>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <a href="portfolio.html" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-300">View Portfolio</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <div class="mb-4">
+                <div class="text-2xl font-bold text-blue-400 mb-2 flex items-center">
+                    <img src="assets/images/logo.svg" alt="Bibeebiz Logo" class="w-8 h-8 mr-2">
+                    Bibeebiz
+                </div>
+                <p class="text-gray-400">Transforming businesses through innovative technology solutions.</p>
+            </div>
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="about.html" class="text-gray-400 hover:text-white">About</a>
+                <a href="services.html" class="text-gray-400 hover:text-white">Services</a>
+                <a href="portfolio.html" class="text-gray-400 hover:text-white">Portfolio</a>
+                <a href="contact.html" class="text-gray-400 hover:text-white">Contact</a>
+            </div>
+            <p class="text-gray-400 text-sm">&copy; 2024 Bibeebiz. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
