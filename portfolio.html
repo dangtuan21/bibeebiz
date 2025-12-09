@@ -3,34 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Bibeebiz</title>
-    <meta name="description" content="Explore our portfolio of successful IT projects and technology solutions delivered for clients across various industries.">
+    <title>Bibeebiz - IT Technology & Software Solutions</title>
+    <meta name="description" content="Empowering businesses with cutting-edge IT solutions, software development, and technology consulting.">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body class="bg-gray-50">
-    <!-- Header -->
-    <header class="bg-white shadow-md">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold text-blue-600 flex items-center">
-                <img src="assets/images/logo.svg" alt="Bibeebiz Logo" class="w-10 h-10 mr-2">
-                Bibeebiz
+    <!-- Professional Header/Navbar -->
+    <header class="bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-100 sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl flex items-center justify-center shadow-lg">
+                        <img src="assets/images/logo.svg" alt="Bibeebiz Logo" class="w-8 h-8 filter brightness-0 invert">
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">Bibeebiz</h1>
+                        <p class="text-xs text-gray-500 hidden lg:block">Technology Solutions</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex items-center space-x-8">
+                    <a href="index.html" class="relative px-3 py-2 text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 group">
+                        <span class="relative z-10">Home</span>
+                        <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></div>
+                    </a>
+                    <a href="about.html" class="relative px-3 py-2 text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 group">
+                        <span class="relative z-10">About</span>
+                        <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></div>
+                    </a>
+                    <a href="services.html" class="relative px-3 py-2 text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 group">
+                        <span class="relative z-10">Services</span>
+                        <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></div>
+                    </a>
+                    <a href="portfolio.html" class="relative px-3 py-2 text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 group">
+                        <span class="relative z-10">Portfolio</span>
+                        <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></div>
+                    </a>
+                    <a href="contact.html" class="relative px-3 py-2 text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 group">
+                        <span class="relative z-10">Contact</span>
+                        <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></div>
+                    </a>
+                    <a href="contact.html" class="bg-gradient-to-r from-blue-600 to-blue-800 text-white px-6 py-2.5 rounded-lg font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300">Get Started</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-300" onclick="toggleMenu()">
+                    <div class="w-6 h-6 flex flex-col justify-center items-center space-y-1">
+                        <span class="block w-5 h-0.5 bg-gray-600 transform transition-transform duration-300" id="menu-line-1"></span>
+                        <span class="block w-5 h-0.5 bg-gray-600 transform transition-transform duration-300" id="menu-line-2"></span>
+                        <span class="block w-5 h-0.5 bg-gray-600 transform transition-transform duration-300" id="menu-line-3"></span>
+                    </div>
+                </button>
             </div>
-            <nav class="hidden md:flex space-x-6">
-                <a href="index.html" class="text-gray-700 hover:text-blue-600">Home</a>
-                <a href="about.html" class="text-gray-700 hover:text-blue-600">About</a>
-                <a href="services.html" class="text-gray-700 hover:text-blue-600">Services</a>
-                <a href="portfolio.html" class="text-gray-700 hover:text-blue-600">Portfolio</a>
-                <a href="contact.html" class="text-gray-700 hover:text-blue-600">Contact</a>
-            </nav>
-            <button class="md:hidden" onclick="toggleMenu()">☰</button>
-        </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
-            <a href="index.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Home</a>
-            <a href="about.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">About</a>
-            <a href="services.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Services</a>
-            <a href="portfolio.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Portfolio</a>
-            <a href="contact.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Contact</a>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden lg:hidden mt-4 bg-white border border-gray-100 rounded-lg shadow-xl overflow-hidden transform transition-all duration-300 ease-in-out">
+                <div class="py-2">
+                    <a href="index.html" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-medium transition-colors duration-300">Home</a>
+                    <a href="about.html" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-medium transition-colors duration-300">About</a>
+                    <a href="services.html" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-medium transition-colors duration-300">Services</a>
+                    <a href="portfolio.html" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-medium transition-colors duration-300">Portfolio</a>
+                    <a href="contact.html" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-medium transition-colors duration-300">Contact</a>
+                    <div class="px-6 py-3 border-t border-gray-100 mt-2">
+                        <a href="contact.html" class="block w-full bg-gradient-to-r from-blue-600 to-blue-800 text-white px-4 py-3 rounded-lg font-semibold text-center hover:shadow-lg transform hover:scale-105 transition-all duration-300">Get Started</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -49,7 +90,7 @@
 
                 <!-- Project 1 -->
                 <div class="portfolio-card">
-                    <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="E-commerce Platform" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <img src="assets/images/portfolio/ecommerce-platform.jpg" alt="E-commerce Platform" class="w-full h-48 object-cover rounded-lg mb-4">
                     <h3 class="text-xl font-semibold mb-2">E-commerce Platform</h3>
                     <p class="text-gray-600 mb-4">Full-stack e-commerce solution with payment integration, inventory management, and admin dashboard.</p>
                     <div class="flex flex-wrap gap-2 mb-4">
@@ -63,7 +104,7 @@
 
                 <!-- Project 2 -->
                 <div class="portfolio-card">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Analytics Dashboard" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <img src="assets/images/portfolio/analytics-dashboard.jpg" alt="Analytics Dashboard" class="w-full h-48 object-cover rounded-lg mb-4">
                     <h3 class="text-xl font-semibold mb-2">Analytics Dashboard</h3>
                     <p class="text-gray-600 mb-4">Real-time business intelligence platform with interactive charts, KPI tracking, and automated reporting.</p>
                     <div class="flex flex-wrap gap-2 mb-4">
@@ -77,7 +118,7 @@
 
                 <!-- Project 3 -->
                 <div class="portfolio-card">
-                    <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Mobile Health App" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <img src="assets/images/portfolio/mobile-health-app.jpg" alt="Mobile Health App" class="w-full h-48 object-cover rounded-lg mb-4">
                     <h3 class="text-xl font-semibold mb-2">Mobile Health App</h3>
                     <p class="text-gray-600 mb-4">Cross-platform mobile application for telemedicine with appointment booking and video consultation features.</p>
                     <div class="flex flex-wrap gap-2 mb-4">
@@ -91,7 +132,7 @@
 
                 <!-- Project 4 -->
                 <div class="portfolio-card">
-                    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="AI Chatbot Platform" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <img src="assets/images/portfolio/ai-chatbot.jpg" alt="AI Chatbot Platform" class="w-full h-48 object-cover rounded-lg mb-4">
                     <h3 class="text-xl font-semibold mb-2">AI Chatbot Platform</h3>
                     <p class="text-gray-600 mb-4">Intelligent chatbot solution with natural language processing for customer support automation.</p>
                     <div class="flex flex-wrap gap-2 mb-4">
@@ -105,7 +146,7 @@
 
                 <!-- Project 5 -->
                 <div class="portfolio-card">
-                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Cloud Migration" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <img src="assets/images/portfolio/cloud-migration.jpg" alt="Cloud Migration" class="w-full h-48 object-cover rounded-lg mb-4">
                     <h3 class="text-xl font-semibold mb-2">Cloud Migration</h3>
                     <p class="text-gray-600 mb-4">Complete cloud migration project moving legacy systems to AWS with zero downtime and improved performance.</p>
                     <div class="flex flex-wrap gap-2 mb-4">
@@ -119,7 +160,7 @@
 
                 <!-- Project 6 -->
                 <div class="portfolio-card">
-                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Security Audit System" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <img src="assets/images/portfolio/security-system.jpg" alt="Security Audit System" class="w-full h-48 object-cover rounded-lg mb-4">
                     <h3 class="text-xl font-semibold mb-2">Security Audit System</h3>
                     <p class="text-gray-600 mb-4">Comprehensive security assessment and monitoring platform for enterprise-level cybersecurity management.</p>
                     <div class="flex flex-wrap gap-2 mb-4">
@@ -148,7 +189,7 @@
     <footer class="bg-gray-800 text-white py-8">
         <div class="container mx-auto px-4 text-center">
             <div class="mb-4">
-                <div class="text-2xl font-bold text-blue-400 mb-2 flex items-center justify-center">
+                <div class="text-2xl font-bold text-blue-400 mb-2 flex items-center">
                     <img src="assets/images/logo.svg" alt="Bibeebiz Logo" class="w-8 h-8 mr-2">
                     Bibeebiz
                 </div>

@@ -3,34 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services - Bibeebiz</title>
-    <meta name="description" content="Explore our comprehensive IT services including software development, cloud solutions, AI, and technology consulting.">
+    <title>Bibeebiz - IT Technology & Software Solutions</title>
+    <meta name="description" content="Empowering businesses with cutting-edge IT solutions, software development, and technology consulting.">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body class="bg-gray-50">
-    <!-- Header -->
-    <header class="bg-white shadow-md">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold text-blue-600 flex items-center">
-                <img src="assets/images/logo.svg" alt="Bibeebiz Logo" class="w-10 h-10 mr-2">
-                Bibeebiz
+    <!-- Professional Header/Navbar -->
+    <header class="bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-100 sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl flex items-center justify-center shadow-lg">
+                        <img src="assets/images/logo.svg" alt="Bibeebiz Logo" class="w-8 h-8 filter brightness-0 invert">
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">Bibeebiz</h1>
+                        <p class="text-xs text-gray-500 hidden lg:block">Technology Solutions</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex items-center space-x-8">
+                    <a href="index.html" class="relative px-3 py-2 text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 group">
+                        <span class="relative z-10">Home</span>
+                        <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></div>
+                    </a>
+                    <a href="about.html" class="relative px-3 py-2 text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 group">
+                        <span class="relative z-10">About</span>
+                        <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></div>
+                    </a>
+                    <a href="services.html" class="relative px-3 py-2 text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 group">
+                        <span class="relative z-10">Services</span>
+                        <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></div>
+                    </a>
+                    <a href="portfolio.html" class="relative px-3 py-2 text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 group">
+                        <span class="relative z-10">Portfolio</span>
+                        <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></div>
+                    </a>
+                    <a href="contact.html" class="relative px-3 py-2 text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 group">
+                        <span class="relative z-10">Contact</span>
+                        <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></div>
+                    </a>
+                    <a href="contact.html" class="bg-gradient-to-r from-blue-600 to-blue-800 text-white px-6 py-2.5 rounded-lg font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300">Get Started</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-300" onclick="toggleMenu()">
+                    <div class="w-6 h-6 flex flex-col justify-center items-center space-y-1">
+                        <span class="block w-5 h-0.5 bg-gray-600 transform transition-transform duration-300" id="menu-line-1"></span>
+                        <span class="block w-5 h-0.5 bg-gray-600 transform transition-transform duration-300" id="menu-line-2"></span>
+                        <span class="block w-5 h-0.5 bg-gray-600 transform transition-transform duration-300" id="menu-line-3"></span>
+                    </div>
+                </button>
             </div>
-            <nav class="hidden md:flex space-x-6">
-                <a href="index.html" class="text-gray-700 hover:text-blue-600">Home</a>
-                <a href="about.html" class="text-gray-700 hover:text-blue-600">About</a>
-                <a href="services.html" class="text-gray-700 hover:text-blue-600">Services</a>
-                <a href="portfolio.html" class="text-gray-700 hover:text-blue-600">Portfolio</a>
-                <a href="contact.html" class="text-gray-700 hover:text-blue-600">Contact</a>
-            </nav>
-            <button class="md:hidden" onclick="toggleMenu()">☰</button>
-        </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
-            <a href="index.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Home</a>
-            <a href="about.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">About</a>
-            <a href="services.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Services</a>
-            <a href="portfolio.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Portfolio</a>
-            <a href="contact.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Contact</a>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden lg:hidden mt-4 bg-white border border-gray-100 rounded-lg shadow-xl overflow-hidden transform transition-all duration-300 ease-in-out">
+                <div class="py-2">
+                    <a href="index.html" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-medium transition-colors duration-300">Home</a>
+                    <a href="about.html" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-medium transition-colors duration-300">About</a>
+                    <a href="services.html" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-medium transition-colors duration-300">Services</a>
+                    <a href="portfolio.html" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-medium transition-colors duration-300">Portfolio</a>
+                    <a href="contact.html" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-medium transition-colors duration-300">Contact</a>
+                    <div class="px-6 py-3 border-t border-gray-100 mt-2">
+                        <a href="contact.html" class="block w-full bg-gradient-to-r from-blue-600 to-blue-800 text-white px-4 py-3 rounded-lg font-semibold text-center hover:shadow-lg transform hover:scale-105 transition-all duration-300">Get Started</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -49,7 +90,7 @@
 
                 <!-- Software Development -->
                 <div class="service-card">
-                    <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Software Development" class="w-20 h-20 mx-auto mb-4 rounded-lg object-cover shadow-md">
+                    <img src="assets/images/services/software-development.jpg" alt="Software Development" class="w-20 h-20 mx-auto mb-4 rounded-lg object-cover shadow-md">
                     <h3 class="text-xl font-semibold mb-4">Software Development</h3>
                     <p class="text-gray-600 mb-4">Custom software solutions built with modern technologies. From web applications to mobile apps, we create scalable, secure, and user-friendly software that drives your business forward.</p>
                     <ul class="text-left text-sm text-gray-600 mb-4">
@@ -63,7 +104,7 @@
 
                 <!-- Cloud Solutions -->
                 <div class="service-card">
-                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Cloud Solutions" class="w-20 h-20 mx-auto mb-4 rounded-lg object-cover shadow-md">
+                    <img src="assets/images/services/cloud-solutions.jpg" alt="Cloud Solutions" class="w-20 h-20 mx-auto mb-4 rounded-lg object-cover shadow-md">
                     <h3 class="text-xl font-semibold mb-4">Cloud Solutions</h3>
                     <p class="text-gray-600 mb-4">Migrate to the cloud or optimize your existing infrastructure. We provide comprehensive cloud services including AWS, Azure, and Google Cloud platform solutions.</p>
                     <ul class="text-left text-sm text-gray-600 mb-4">
@@ -77,7 +118,7 @@
 
                 <!-- AI & Machine Learning -->
                 <div class="service-card">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="AI & Machine Learning" class="w-20 h-20 mx-auto mb-4 rounded-lg object-cover shadow-md">
+                    <img src="assets/images/services/ai-analytics.jpg" alt="AI & Analytics" class="w-20 h-20 mx-auto mb-4 rounded-lg object-cover shadow-md">
                     <h3 class="text-xl font-semibold mb-4">AI & Machine Learning</h3>
                     <p class="text-gray-600 mb-4">Leverage the power of artificial intelligence to automate processes and gain insights. We develop AI solutions including machine learning models, natural language processing, and computer vision.</p>
                     <ul class="text-left text-sm text-gray-600 mb-4">
@@ -91,7 +132,7 @@
 
                 <!-- IT Consulting -->
                 <div class="service-card">
-                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="IT Consulting" class="w-20 h-20 mx-auto mb-4 rounded-lg object-cover shadow-md">
+                    <img src="assets/images/services/it-consulting.jpg" alt="IT Consulting" class="w-20 h-20 mx-auto mb-4 rounded-lg object-cover shadow-md">
                     <h3 class="text-xl font-semibold mb-4">IT Consulting</h3>
                     <p class="text-gray-600 mb-4">Strategic IT consulting to align technology with your business goals. We help you make informed decisions about technology investments, digital transformation, and IT strategy.</p>
                     <ul class="text-left text-sm text-gray-600 mb-4">
@@ -105,7 +146,7 @@
 
                 <!-- Cybersecurity -->
                 <div class="service-card">
-                    <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Cybersecurity" class="w-20 h-20 mx-auto mb-4 rounded-lg object-cover shadow-md">
+                    <img src="assets/images/services/cybersecurity.jpg" alt="Cybersecurity" class="w-20 h-20 mx-auto mb-4 rounded-lg object-cover shadow-md">
                     <h3 class="text-xl font-semibold mb-4">Cybersecurity</h3>
                     <p class="text-gray-600 mb-4">Protect your business from cyber threats with comprehensive security solutions. We implement robust security measures, conduct vulnerability assessments, and provide ongoing monitoring.</p>
                     <ul class="text-left text-sm text-gray-600 mb-4">
@@ -119,7 +160,7 @@
 
                 <!-- Support & Maintenance -->
                 <div class="service-card">
-                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Support & Maintenance" class="w-20 h-20 mx-auto mb-4 rounded-lg object-cover shadow-md">
+                    <img src="assets/images/services/support-maintenance.jpg" alt="Support & Maintenance" class="w-20 h-20 mx-auto mb-4 rounded-lg object-cover shadow-md">
                     <h3 class="text-xl font-semibold mb-4">Support & Maintenance</h3>
                     <p class="text-gray-600 mb-4">Ongoing support and maintenance for your IT infrastructure and applications. We ensure your systems run smoothly with regular updates, backups, and technical support.</p>
                     <ul class="text-left text-sm text-gray-600 mb-4">
@@ -148,7 +189,7 @@
     <footer class="bg-gray-800 text-white py-8">
         <div class="container mx-auto px-4 text-center">
             <div class="mb-4">
-                <div class="text-2xl font-bold text-blue-400 mb-2 flex items-center justify-center">
+                <div class="text-2xl font-bold text-blue-400 mb-2 flex items-center">
                     <img src="assets/images/logo.svg" alt="Bibeebiz Logo" class="w-8 h-8 mr-2">
                     Bibeebiz
                 </div>

@@ -1,9 +1,72 @@
-// Vanilla JavaScript for Bibeebiz website
+// Vanilla JavaScript for Bibeebiz website - Professional Version
 
-// Mobile menu toggle function
+// Mobile menu toggle function with animations
+let menuOpen = false;
+
 function toggleMenu() {
     const mobileMenu = document.getElementById('mobile-menu');
-    mobileMenu.classList.toggle('hidden');
+    const line1 = document.getElementById('menu-line-1');
+    const line2 = document.getElementById('menu-line-2');
+    const line3 = document.getElementById('menu-line-3');
+    
+    menuOpen = !menuOpen;
+    
+    if (menuOpen) {
+        mobileMenu.classList.remove('hidden');
+        mobileMenu.classList.add('opacity-100', 'scale-100');
+        
+        // Animate hamburger to X
+        line1.classList.add('rotate-45', 'translate-y-1.5');
+        line2.classList.add('opacity-0');
+        line3.classList.add('-rotate-45', '-translate-y-1.5');
+    } else {
+        mobileMenu.classList.add('opacity-0', 'scale-95');
+        setTimeout(() => {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('opacity-100', 'scale-100');
+        }, 300);
+        
+        // Animate X back to hamburger
+        line1.classList.remove('rotate-45', 'translate-y-1.5');
+        line2.classList.remove('opacity-0');
+        line3.classList.remove('-rotate-45', '-translate-y-1.5');
+    }
+}
+
+// Highlight active menu item
+function highlightActiveMenu() {
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    
+    // Map of page names to menu links
+    const menuMap = {
+        'index.html': 'Home',
+        'about.html': 'About',
+        'services.html': 'Services',
+        'portfolio.html': 'Portfolio',
+        'contact.html': 'Contact'
+    };
+    
+    const activeMenuText = menuMap[currentPath];
+    
+    if (activeMenuText) {
+        // Find and highlight desktop navigation links
+        const desktopLinks = document.querySelectorAll('nav a');
+        desktopLinks.forEach(link => {
+            if (link.textContent.trim() === activeMenuText) {
+                link.classList.add('active');
+                // Remove the bottom border animation since we have active state
+                link.querySelector('div').style.width = '100%';
+            }
+        });
+        
+        // Find and highlight mobile navigation links
+        const mobileLinks = document.querySelectorAll('#mobile-menu a');
+        mobileLinks.forEach(link => {
+            if (link.textContent.trim() === activeMenuText) {
+                link.classList.add('active');
+            }
+        });
+    }
 }
 
 // Smooth scrolling for anchor links
@@ -76,4 +139,7 @@ function subscribeNewsletter() {
 document.addEventListener('DOMContentLoaded', function() {
     // Add any initialization code here
     console.log('Bibeebiz website loaded successfully!');
+    
+    // Highlight active menu item
+    highlightActiveMenu();
 });
