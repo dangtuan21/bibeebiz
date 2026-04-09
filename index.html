@@ -154,6 +154,88 @@
         </div>
     </footer>
 
+    <!-- Honey Talker Widget -->
+    <script>
+        var honeyTalkerConfig = {
+            theme: 'default',
+            position: 'bottom-right',
+            welcomeMessage: 'Xin chao! Toi la tro ly AI Honey Talker cua BiBeeBiz LLC. Toi co giup gi cho ban?',
+            apiUrl: 'http://3.239.109.97/api/chat',
+            orgId: '69cff9af13ff4df382ad11ff'
+        };
+    </script>
+    <script src="http://3.239.109.97/honey-talker-widget.js"></script>
+    <script>
+        (function initHoneyTalkerWidget() {
+            function resolveWidget() {
+                if (window.HoneyTalkerWidget) {
+                    return window.HoneyTalkerWidget;
+                }
+
+                if (typeof HoneyTalkerWidget !== 'undefined') {
+                    window.HoneyTalkerWidget = HoneyTalkerWidget;
+                    return window.HoneyTalkerWidget;
+                }
+
+                return null;
+            }
+
+            function ensureOpen(widget) {
+                if (typeof widget.open === 'function') {
+                    return;
+                }
+
+                if (typeof widget.renderWidget === 'function') {
+                    widget.open = function () {
+                        this.isOpen = true;
+                        this.unreadCount = 0;
+                        this.renderWidget();
+                        setTimeout(function () {
+                            var input = document.getElementById('honey-input');
+                            if (input) {
+                                input.focus();
+                            }
+                        }, 100);
+                    }.bind(widget);
+                }
+            }
+
+            var widget = resolveWidget();
+
+            if (!widget) {
+                console.error('Honey Talker widget is not available after script load.');
+                return;
+            }
+
+            if (widget.default && typeof widget.default.init === 'function') {
+                widget = widget.default;
+                window.HoneyTalkerWidget = widget;
+            }
+
+            if (typeof widget.init === 'function') {
+                widget.init(honeyTalkerConfig);
+                ensureOpen(widget);
+                return;
+            }
+
+            if (typeof widget === 'function') {
+                try {
+                    var instance = new widget();
+                    if (typeof instance.init === 'function') {
+                        instance.init(honeyTalkerConfig);
+                    }
+                    window.HoneyTalkerWidget = instance;
+                    ensureOpen(instance);
+                } catch (error) {
+                    console.error('Failed to initialize Honey Talker widget instance:', error);
+                }
+                return;
+            }
+
+            console.error('Honey Talker widget init method is missing.');
+        })();
+    </script>
+
     <script src="assets/js/script.js"></script>
 </body>
 </html>
