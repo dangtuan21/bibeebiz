@@ -17,9 +17,9 @@ This is a pure HTML/CSS/JavaScript static website built for Bibeebiz, a company 
 ## Technical Stack
 
 - **Frontend**: HTML5, CSS3 (Tailwind CSS via CDN), Vanilla JavaScript
-- **Hosting**: 
-- **Container**: Docker + Nginx for static file serving
-- **Deployment**: Automated
+- **Hosting**: AWS Lightsail (`44.222.80.227`)
+- **Web Server**: Nginx serving static files from `/var/www/html`
+- **Deployment**: Git-based via `deploy.sh`
 - **No build process**: Edit files directly
 
 ## File Structure
@@ -31,14 +31,15 @@ bibeebiz-website/
 ├── services.html           # Services page
 ├── portfolio.html          # Portfolio page
 ├── contact.html            # Contact page
+├── privacy-policy.html     # Privacy policy
+├── account-request.html    # Account request form
 ├── assets/
 │   ├── css/
 │   │   └── styles.css      # Custom styles + Tailwind
 │   ├── js/
 │   │   └── script.js       # JavaScript functionality
-│   └── images/             # Logo, photos, screenshots (to be added)
-├── Dockerfile              # Container configuration
-├── .dockerignore           # Docker build exclusions
+│   └── images/             # Logo, photos, screenshots
+├── deploy.sh               # Deploy script (GitHub → Lightsail)
 └── README.md               # This file
 ```
 
@@ -60,13 +61,23 @@ bibeebiz-website/
 
 ## Deployment
 
-### Alternative Deployment Options
-Upload all files to any static hosting service:
-- Netlify (drag & drop)
-- Vercel (similar to Netlify)
-- GitHub Pages (free for public repos)
-- AWS S3 + CloudFront
-- Traditional web hosting
+### Production (AWS Lightsail)
+
+- **Instance**: `44.222.80.227`
+- **SSH key**: `~/.ssh/bibeebiz-key.pem` (Lightsail default key pair)
+- **Repo on server**: `/home/ubuntu/bibeebiz`
+- **Web root**: `/var/www/html` (served by Nginx)
+
+To deploy:
+
+```bash
+bash deploy.sh
+```
+
+This will:
+1. Push local commits to GitHub
+2. SSH to the server and `git pull`
+3. Rsync files to `/var/www/html`
 
 ## Contact Form
 
@@ -89,16 +100,11 @@ The contact form currently shows an alert on submission. For production use, int
 ### Local Development
 Open any HTML file directly in a browser to view the website. No development server required.
 
-### Deployment Files
-The following files are for container deployment and should be committed to version control:
-- `Dockerfile` - Container build instructions
-- `.dockerignore` - Files excluded from Docker build
-
 ### Making Updates
 1. Edit HTML/CSS/JS files directly
 2. Test locally by opening files in browser
-3. Commit changes: `git add . && git commit -m "Update content"`
-4. Deploy to your hosting platform
+3. Commit: `git add . && git commit -m "your message"`
+4. Deploy: `bash deploy.sh`
 
 ## License
 
